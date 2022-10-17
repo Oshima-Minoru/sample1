@@ -1,0 +1,457 @@
+// wrapper
+#wrapper {
+  position: relative;
+  width: 100%;
+  background: $silver;
+}
+
+main {
+  position: relative;
+}
+
+picture,
+figure,
+.image_wrap {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+picture img,
+figure img,
+.image_wrap img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+
+/* svg */
+
+svg {
+  position: relative;
+  width: initial;
+  height: auto;
+}
+
+.grid_area {
+  position: relative;
+  display: grid;
+}
+
+.flex_area {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column_left {
+  position: relative;
+}
+
+.column_right {
+  position: relative;
+}
+
+// tab
+
+.tabs {
+  position: relative;
+  .tabs_list {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0 -8px 45px;
+    @include media('sp') {
+      margin: 0 -5px 30px;
+    }
+    li {
+      position: relative;
+      margin: 0 0 15px;
+      padding: 0 8px;
+      @include media('sp') {
+        padding: 0 5px;
+        margin-bottom: 10px;
+      }
+      a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 54px;
+        min-width: 170px;
+        background-color: $white;
+        padding: 6px 20px 10px;
+        font-family: $font_fork;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: $base;
+        text-decoration: none;
+        outline: none;
+        border: 1px solid $base;
+        border-radius: 27px;
+        transition: all 0.4s;
+        margin: 0;
+        cursor: pointer;
+        @include media('sp') {
+          height: 48px;
+          border-radius: 24px;
+          font-size: 15px;
+          padding: 5px 20px 8px;
+          min-width: auto;
+        }
+        &.active,
+        &:focus {
+          background-color: $base;
+          color: $white;
+        }
+        @include media('pc') {
+          &:hover {
+            background-color: $base;
+            color: $white;
+          }
+        }
+      }
+      
+    }
+  }
+  .tab {
+    display: none;
+    &.active {
+      display: block;
+    }
+    .tab_content {
+      position: relative;
+      padding: 0;
+    }
+  }
+}
+
+.accordion_info_container {
+  position: relative;
+  .accordion_item {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    .accordion_question {
+      position: relative;
+      h3 {
+        position: relative;
+        display: block;
+        width: 100%;
+        font-family: $font_fork;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: left;
+        color: $white;
+        padding: 14px 40px 16px 70px;
+        border-radius: 30px;
+        background: $base;
+        cursor: pointer;
+        @include media('sp') {
+          font-size: 15px;
+          padding: 10px 30px 13px 32px;
+        }
+        &::before {
+          content: "Q.";
+          position: absolute;
+          top: 12.5px;
+          left: 25px;
+          font-family: $font_fork;
+          font-size: 24px;
+          line-height: 28px;
+          font-weight: normal;
+          color: $white;
+          @include media('sp') {
+            font-size: 18px;
+            left: 14px;
+            top: 10px;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: calc(50% - 5px);
+          right: 25px;
+          display: inline-block;
+          width: 16px;
+          height: 9px;
+          background-image: url(../img/common/arrow_down.svg);
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          transition: transform ease-in-out 0.4s;
+          @include media('sp') {
+            right: 14px;
+            top: calc(50% - 4px);
+            width: 14px;
+            height: 8px;
+          }
+        }
+      }
+      &.expanded {
+        h3 {
+          &::after {
+            transform: rotate(180deg);
+            transition: transform ease-in-out 0.4s;
+          }
+        }
+      }
+    }
+    .accordion_answer {
+      position: relative;
+      display: none;
+      padding: 0 25px;
+      margin: 0;
+      @include media('sp') {
+        padding: 0 0 0 14px;
+      }
+      .content {
+        position: relative;
+        padding: 20px 42px;
+        margin: 0;
+        @include media('sp') {
+          padding: 15px 20px 10px 22px;
+          @include media('sp') {
+            padding: 15px 18px;
+          }
+        }
+        &::before {
+          content: "A.";
+          position: absolute;
+          top: 18px;
+          left: 0;
+          font-family: $font_fork;
+          font-size: 24px;
+          line-height: 28px;
+          font-weight: normal;
+          color: $base;
+          @include media('sp') {
+            font-size: 18px;
+            top: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// contact form
+.p_contact_form_container {
+  position: relative;
+  padding: 40px 0;
+  width: 100%;
+  @include media('sp') {
+    padding: 30px 0;
+  }
+  .p_contact_form {
+    position: relative;
+    display: block;
+    max-width: 698px;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    .form_input_wrap {
+      position: relative;
+      margin-bottom: 60px;
+      @include media('sp') {
+        margin-bottom: 40px;
+      }
+    }
+    .form_input_item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      grid-column-gap: 10px;
+      @include media('sp') {
+        grid-template-columns: 100%;
+        grid-row-gap: 10px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 30px;
+        @include media('sp') {
+          margin-bottom: 20px;
+        }
+      }
+      .form_label {
+        position: relative;
+        padding: 0;
+        @include media('sp') {
+          padding: 0;
+        }
+        .label_text {
+          position: relative;
+          display: inline-block;
+          font-weight: 500;
+          font-family: $font_fork;
+          font-size: 16px;
+          line-height: 28px;
+          color: $base;
+        }
+        .required {
+          position: relative;
+          display: inline-block;
+          padding: 2px 8px 5px;
+          font-size: 12px;
+          font-family: $font_fork;
+          line-height: 14px;
+          font-weight: normal;
+          letter-spacing: 0.1em;
+          color: $white;
+          background: $red;
+          border-radius: 3px;
+          margin-left: 10px;
+        }
+      }
+      .form_input {
+        position: relative;
+      }
+      .input_wrap {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        & > * {
+          position: relative;
+          flex: 0 0 100%;
+          width: 100%;
+        }
+      }
+    }
+    .form_submit_wrap {
+      position: relative;
+      .form_help_text_item {
+        position: relative;
+        margin-bottom: 60px;
+        @include media('sp') {
+          margin-bottom: 40px;
+        }
+      } 
+      
+      .form_submit_btn_wrap,
+      .form_phone_btn_wrap {
+        position: relative;
+        max-width: 426px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        .btn {
+          position: relative;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+      .form_phone_btn_wrap {
+        margin-top: 20px;
+      }
+    }
+  }
+  .wpcf7 form .wpcf7-response-output {
+    margin: 0 0 60px;
+    padding: 14px 20px 16px;
+    @include media('sp') {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// img
+.p_img {
+  position: relative;
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+
+// google map
+.google_map {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  iframe {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 450px;
+  }
+}
+
+// wp-pagination
+.p_wp_pagination {
+  position: relative;
+  .wp-pagenavi {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: -2px;
+    span,
+    a {
+      position: relative;
+      padding: 5px 8px 8px;
+      min-width: 34px;
+      height: 34px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: $font_fork;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 20px;
+      color: $base;
+      background: $white;
+      transition: all 0.4s;
+      margin-right: 2px;
+      @include media('sp') {
+        font-size: 14px;
+      }
+      &:focus {
+        background: $blue;
+        color: $white;
+      }
+      @include media('pc') {
+        &:hover {
+          background: $blue;
+          color: $white;
+        }
+      }
+    }
+    span {
+      background: $blue;
+      color: $white;
+      &.pages {
+        display: none;
+      }
+    }
+    a.first,
+    a.last {
+      display: none;
+    }
+    a.previouspostslink,
+    a.nextpostslink {
+      padding: 2px 8px 9px;
+    }
+  }
+}

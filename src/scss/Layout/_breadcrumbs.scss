@@ -1,0 +1,45 @@
+.p_breadcrumbs_section {
+  position: relative;
+  padding: 15px 0;
+  margin: 0;
+  @include media('sp') {
+    padding: 10px 0;
+  }
+  ol {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: $font_fork;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: left;
+    color: $base;
+    padding: 0;
+    margin: 0;
+    li {
+      position: relative;
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      &+li {
+        padding-left: 10px;
+        &::before {
+          content: "/";
+          position: relative;
+          display: inline-block;
+          padding-right: 11px;
+        }
+      }
+    }
+    a {
+      position: relative;
+      display: inline-block;
+      color: #7D7A7A;
+      text-decoration: none;
+      font-family: inherit;
+      font-size: inherit;
+    }
+  }
+}

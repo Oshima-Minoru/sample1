@@ -1,0 +1,172 @@
+@include media('tb') {
+  .c_problem_info_part .grid_area {
+    grid-column-gap: 30px;
+  }
+  .c_problem_info_part .grid_area .problem_text_list li {
+    font-size: 20px;
+    padding-left: 40px;
+  }
+  .c_problem_info_part .grid_area .problem_text_list li::before {
+    top: 10px;
+    width: 25.63px;
+    height: 24.97px;
+  }
+  .c_problem_info_part .grid_area .c_part_img img {
+    min-height: 272px;
+  }
+  .c_seminar_info_list_container .c_seminar_item .flex_area .column_left {
+    width: 50%;
+  }
+  .c_seminar_info_list_container .c_seminar_item .flex_area .column_right {
+    width: calc(50% - 30px);
+  }
+  .c_seminar_info_list_container .c_seminar_item:not(:last-child) {
+    margin-bottom: 90px;
+  }
+  .c_news_info_container .c_news_info_list {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+  .c_apply_actions_area .c_apply_action_list {
+    grid-template-columns: 100%;
+  }
+  .p_company_info_container .company_title h3 {
+    font-size: 26px;
+  }
+  .post_single_info_container .post_date {
+    font-size: 18px;
+  }
+}
+
+@include media('sp') {
+  .c_seminar_slider_container {
+    padding: 0;
+    .c_seminar_info_slider {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-row-gap: 30px;
+    }
+  }
+  .c_problem_info_part .grid_area {
+    grid-template-columns: 100%;
+    grid-row-gap: 22px;
+  }
+  .c_problem_info_part .grid_area .problem_text_list li {
+    font-size: 16px;
+    padding-left: 35px;
+    line-height: 2.4;
+  }
+  .c_problem_info_part .grid_area .problem_text_list li::before {
+    top: 10px;
+    width: 21.63px;
+    height: 20.97px;
+  }
+  .c_problem_info_part .grid_area .c_part_img {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($color: #000000, $alpha: 0.16);
+      z-index: 1;
+    }
+  }
+  .c_problem_info_part::after {
+    width: 178px;
+    height: 57px;
+  }
+  .c_problem_info_part {
+    position: relative;
+    padding-bottom: 80px;
+  }
+  .c_seminar_info_part .c_part_img {
+    max-width: 242px;
+  }
+  .c_seminar_info_list_container .c_seminar_item .flex_area .column_left {
+    width: 100%;
+    margin-bottom: 22px;
+  }
+  .c_seminar_info_list_container .c_seminar_item .flex_area .column_right {
+    width: 100%;
+  }
+  .c_seminar_info_list_container .c_seminar_item:not(:last-child) {
+    margin-bottom: 60px;
+  }
+  .c_seminar_slider_container .c_seminar_info_slider .slick-next,
+  .c_seminar_slider_container .c_seminar_info_slider .slick-prev {
+    height: 80px;
+    width: 18px;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+  }
+  .c_seminar_slider_container .c_seminar_info_slider .slick-prev {
+    left: -28px;
+  }
+  .c_seminar_slider_container .c_seminar_info_slider .slick-next {
+    right: -28px;
+  }
+  .c_seminar_slider_container .c_seminar_slider_item {
+    box-shadow: 0 13px 36px rgba($color: #000000, $alpha: 0.16);
+  }
+  .c_seminar_slider_container .c_seminar_slider_item .slider_item_img img {
+    height: auto;
+  }
+  .c_seminar_slider_container .c_seminar_slider_item .slider_item_info {
+    position: relative;
+    padding: 18px 20px;
+  }
+  .c_seminar_slider_container .c_seminar_slider_item .slider_item_info .date_text {
+    margin-bottom: 8px;
+  }
+  .c_news_info_container .c_news_item_img img {
+    height: 186px;
+  }
+  .c_news_info_container .c_news_item_info {
+    padding: 20px;
+  }
+  .p_company_info_container .company_title h3 {
+    font-size: 22px;
+    line-height: 1.8;
+  }
+  .p_company_info_container .company_title {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+  .p_company_info_container .company_text_area .text_item {
+    flex-wrap: wrap;
+    margin-right: -8px;
+  }
+  .p_company_info_container .company_text_area .text_item .name {
+    width: 100%;
+    margin-right: 0;
+  }
+  .p_company_info_container .company_text_area .text_item .value {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .c_apply_actions_area .c_apply_action_list {
+    grid-row-gap: 20px;
+  }
+  .c_seminar_slider_container .c_seminar_info_list {
+    grid-row-gap: 30px;
+  }
+  .post_single_info_container .post_tags .tag_text {
+    position: relative;
+    padding: 2px 22px 4px;
+    font-size: 20px;
+  }
+  .post_single_info_container .post_date {
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  .post_single_info_container .post_date span::before {
+    width: 19px;
+    height: 19px;
+    top: 5px;
+  }
+  .post_single_info_container .post_date span {
+    padding-left: 30px;
+  }
+}

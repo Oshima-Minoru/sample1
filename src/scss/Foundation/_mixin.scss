@@ -1,0 +1,70 @@
+//メディアクエリをmixin化
+$breakpoints: ( 'max768': 'only screen and (max-width: 768px)', 'min769': 'only screen and (min-width: 769px)', 'max991': 'only screen and (max-width: 991px)', 'min992': 'only screen and (min-width: 992px)', 'max1240': 'only screen and (max-width: 1240px)', 'min1240': 'only screen and (min-width: 1240px)', 'sp': 'only screen and (max-width: 768px)', 'tb': 'print,screen and (max-width: 991px)', 'pc': 'print,screen and (min-width: 769px)') !default;
+@mixin media($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin round($pixels: 6px) {
+  border-radius: $pixels;
+  -webkit-border-radius: $pixels;
+  -moz-border-radius: $pixels;
+  -ms-border-radius: $pixels;
+  -o-border-radius: $pixels;
+  @content;
+}
+
+@mixin transition($seconds: 0.4s, $param: all) {
+  transition: $param $seconds;
+  -webkit-transition: $param $seconds;
+  -moz-transition: $param $seconds;
+  -ms-transition: $param $seconds;
+  -o-transition: $param $seconds;
+  @content;
+}
+
+@mixin translate($x: -50%, $y: -50%) {
+  transform: translate($x, $y);
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  @content;
+}
+
+@mixin translateX($x: -50%) {
+  transform: translateX($x);
+  -webkit-transform: translateX($x);
+  -moz-transform: translateX($x);
+  -ms-transform: translateX($x);
+  -o-transform: translateX($x);
+  @content;
+}
+
+@mixin translateY($y: -50%) {
+  transform: translateY($y);
+  -webkit-transform: translateY($y);
+  -moz-transform: translateY($y);
+  -ms-transform: translateY($y);
+  -o-transform: translateY($y);
+  @content;
+}
+
+@mixin scale($x: 1, $y: 1) {
+  transform: scale($x, $y);
+  -webkit-transform: scale($x, $y);
+  -moz-transform: scale($x, $y);
+  -ms-transform: scale($x, $y);
+  -o-transform: scale($x, $y);
+  @content;
+}
+
+@mixin rotate($alpha: 90deg) {
+  transform: rotate($alpha);
+  -webkit-transform: rotate($alpha);
+  -moz-transform: rotate($alpha);
+  -ms-transform: rotate($alpha);
+  -o-transform: rotate($alpha);
+  @content;
+}
